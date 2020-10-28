@@ -10,6 +10,7 @@ const forecast = (lat, long, callback) =>{
         } else{
             callback(undefined, `Todays weather is: ${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degree out. There is a ${body.current.precip}% chance of rain.`)
         }
-    })
+    });
+    
 }
 module.exports = forecast;
