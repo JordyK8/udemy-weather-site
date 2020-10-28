@@ -8,7 +8,11 @@ const forecast = (lat, long, callback) =>{
         } else if(body.error){
             callback('Could not find your query, plese try again.', undefined);
         } else{
-            callback(undefined, `Todays weather is: ${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degree out. There is a ${body.current.precip}% chance of rain.`)
+            callback(undefined, {
+                data: `Todays weather is: ${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degree out. There is a ${body.current.precip}% chance of rain.`
+                ,
+                icon: body.current.weather_icons[0]
+            })
         }
     });
     
